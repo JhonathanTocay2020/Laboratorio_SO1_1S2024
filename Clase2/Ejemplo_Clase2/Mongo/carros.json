@@ -1,0 +1,55 @@
+  [
+    {
+      "modelo": "Tesla Model 3",
+      "marca": "Tesla",
+      "anio": 2022,
+      "color": "Rojo",
+      "motor": {
+        "tipo": "Eléctrico",
+        "potencia": "283 kW"
+      },
+      "caracteristicas": ["Asientos de cuero", "Sistema de navegación", "Cámara de respaldo"],
+      "precio": 49900,
+      "disponible": true
+    },
+    {
+      "modelo": "Honda Civic",
+      "marca": "Honda",
+      "anio": 2021,
+      "color": "Azul",
+      "motor": {
+        "tipo": "Gasolina",
+        "potencia": "158 hp"
+      },
+      "caracteristicas": ["Sistema de frenado automático", "Control de crucero adaptativo"],
+      "precio": 23900,
+      "disponible": true
+    },
+    {
+      "modelo": "Toyota Camry",
+      "marca": "Toyota",
+      "anio": 2022,
+      "color": "Plateado",
+      "motor": {
+        "tipo": "Híbrido",
+        "potencia": "208 hp"
+      },
+      "caracteristicas": ["Asientos de tela", "Sistema de audio premium"],
+      "precio": 30900,
+      "disponible": true
+    },
+    {
+      "modelo": "Ford Mustang",
+      "marca": "Ford",
+      "anio": 2023,
+      "color": "Negro",
+      "motor": {
+        "tipo": "Gasolina",
+        "potencia": "450 hp"
+      },
+      "caracteristicas": ["Techo convertible", "Sistema de escape deportivo"],
+      "precio": 54900,
+      "disponible": false
+    }
+  ]
+  

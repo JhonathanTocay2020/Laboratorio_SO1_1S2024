@@ -1,0 +1,31 @@
+version: '3'
+services:
+  base:
+    image: "nombre_imagen"
+    container_name: "nombre_contenedor"
+    environment:
+      MYSQL_ROOT_PASSWORD: "password_mysql"
+    volumes:
+      - base_practica1:/var/lib/mysql #Se crea un directorio en el cual estara el volumen     
+    ports:
+      - "puerto_a_exponer>>:puerto_del_contenedor"
+  backend:
+    build: ./backend 
+    image: "jhonathantocay/backend_practica1_201801268"
+    container_name: 'Backend_Go'
+    ports:
+      - "puerto_a_exponer>>:puerto_del_contenedor"
+    volumes:
+      - ./dat:/data/script
+  frontend:
+    image: "nombre_imagen"
+    container_name: "nombre_contenedor"
+    ports:
+      - "puerto_a_exponer>>:puerto_del_contenedor"
+  script: 
+    image: "nombre_imagen"
+    container_name: "nombre_contenedor"
+    volumes:
+      - ./dat:/data/script   
+volumes:
+  base_practica1: 

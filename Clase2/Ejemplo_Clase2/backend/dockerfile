@@ -1,0 +1,20 @@
+# Define la imagen base de Node.js 18.16.0 en su versión "alpine"
+FROM node:18.16.0-alpine
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 2024
+
+CMD ["node", "src/index.js"]
+
+# Construye la imagen Docker (asegúrate de ejecutar el comando desde el directorio que contiene el Dockerfile)
+# docker build -t clase2backend .
+
+# Ejecuta un contenedor basado en la imagen que acabas de crear
+# docker run -p 2024:2024 clase2backend

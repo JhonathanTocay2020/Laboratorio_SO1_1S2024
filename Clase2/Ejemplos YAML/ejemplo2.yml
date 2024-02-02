@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  backend:
+    image: 'backend_imagen'
+    container_name: 'backend-NodeJS'
+    ports:
+      - '3200:3200'
+  frontend:
+    image: 'frontend_imagen'
+    container_name: 'frontend-React'
+    environment:
+      REACT_APP_API_URL: 'http://35.171.18.214:3200' #Variable de entorno para las rutas con backend
+    ports:
+      - '3000:3000'
