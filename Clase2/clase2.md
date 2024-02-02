@@ -82,8 +82,16 @@ sudo dpkg -i mongodb-compass_1.35.0_amd64.deb
 mongodb-compass
 ```
 
-### Instalar DBeaver en  Ubuntu 22.04
+# Docker hub
 
+## Subir una imagen a DockerHub
 ```sh
-sudo snap install dbeaver-ce
+sudo docker build -t <<nombre de usuario>>/<<nombre de la imagen>> .
+
+sudo docker push <<nombre de usuario>>/<<nombre de la imagen>>
+```
+
+## Bajar una imagen a DockerHub
+```sh
+sudo docker pull <<nombre de usuario>>/<<nombre de la imagen>>
 ```
