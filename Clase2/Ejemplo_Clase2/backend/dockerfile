@@ -14,7 +14,7 @@ EXPOSE 2024
 CMD ["node", "src/index.js"]
 
 # Construye la imagen Docker (asegúrate de ejecutar el comando desde el directorio que contiene el Dockerfile)
-# docker build -t clase2backend .
+# docker build -t jhonathantocay/clase2backend .
 
 # Ejecuta un contenedor basado en la imagen que acabas de crear
-# docker run -p 2024:2024 clase2backend
+# docker run -p 2024:2024 jhonathantocay/clase2backend

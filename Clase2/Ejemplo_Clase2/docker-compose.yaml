@@ -2,21 +2,21 @@ version: '3.1'
 
 services:
   mongo:
-    image: mongo
+    image: "mongo:4.4"
     container_name: 'MongoDB'
     restart: always
     volumes:
-      - volume_mongo:/var/lib/mongo      
+      - volume_mongo:/data/db      
     ports:
       - "27017:27017"
   backend:
-    image: "clase2backend"
+    image: "jhonathantocay/clase2backend"
     container_name: 'BackendNodeJS'
     restart: always
     ports:
       - "2024:2024"
   frontend:
-    image: 'clase2front'
+    image: 'jhonathantocay/clase2front'
     container_name: 'frontReact'
     ports:
       - '3000:3000'
