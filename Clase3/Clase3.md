@@ -98,3 +98,74 @@ Eliminar modulo
 ```sh
 sudo rmmod <<nombre_modulo>>.ko
 ```
+
+# Wails
+
+Instalacion de Wails version de Go mayor al 1.18
+```sh
+go install github.com/wailsapp/wails/v2/cmd/wails@latest
+```
+
+comando wails
+
+version de wails
+```sh
+wails version
+```
+
+Si no funciona verificar el $GOPATH
+```sh
+echo $GOPATH
+```
+
+Inicializar el proyecto
+```sh
+wails init -n myproject -t react
+```
+ejecutar el proyecto de wails
+
+```sh
+wails dev
+```
+
+## Solucionar $GOPATH 
+
+Si el $GOPATH imprime vacio se debe de configurar y definir la variable de entorno GOPATH.
+
+Seguir los siguientes pasos. 
+
+1. Crear el directorio de trabajo de GOPATH:
+```sh
+mkdir -p $HOME/go
+```
+
+2. Configurar las variables de entorno
+
+```sh
+nano ~/.bashrc
+```
+
+Debemos de agregar las siguientes líneas al final del archivo:
+
+```sh
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+```
+
+Guarda los cambios y cierra el editor.
+
+3. Recargar la configuración de la shell para que se apliquen los cambios, ademas cierra todas las terminales que se han abierto.
+
+```sh
+source ~/.bashrc
+```
+
+4. Verifica de nuevo si se han agregado los correctamente la variable de entorno
+
+```sh
+echo $GOPATH
+```
+y comprueba de nuevo si 
+```sh
+wails version
+```

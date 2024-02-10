@@ -8,7 +8,7 @@ import (
 
 func main() {
 	// Lanzar un goroutine que ejecute la función cada n segundos
-	interval := 10 // segundos
+	interval := 5 // segundos
 	ticker := time.NewTicker(time.Second * time.Duration(interval))
 	defer ticker.Stop()
 
@@ -18,7 +18,7 @@ func main() {
 			fmt.Println("DATOS OBTENIDOS DESDE EL MODULO:")
 			fmt.Println("")
 
-			cmd := exec.Command("sh", "-c", "cat /proc/modulo_clase4")
+			cmd := exec.Command("sh", "-c", "cat /proc/modulo_ram")
 			out, err := cmd.CombinedOutput()
 			if err != nil {
 				fmt.Println(err)

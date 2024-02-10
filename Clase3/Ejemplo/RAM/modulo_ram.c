@@ -1,6 +1,6 @@
 #include <linux/module.h>
 #include <linux/proc_fs.h>
-#include <linux/sysinfo.h>
+#include <linux/sysinfo.h> // ram 
 #include <linux/seq_file.h>
 #include <linux/mm.h>
 
@@ -29,21 +29,22 @@ static int abrir_aproc(struct inode *inode, struct file *file)
 {
     return single_open(file, escribir_a_proc, NULL);
 }
-
+// Operaciones de Kernel Superior a 5.6
 static struct proc_ops archivo_operaciones = {
     .proc_open = abrir_aproc,
-    .proc_read = seq_read};
+    .proc_read = seq_read
+};
 
 static int __init modulo_init(void)
 {
-    proc_create("ram_201801268", 0, NULL, &archivo_operaciones);
+    proc_create("modulo_ram", 0, NULL, &archivo_operaciones);
     printk(KERN_INFO "Modulo RAM montado\n");
     return 0;
 }
 
 static void __exit modulo_cleanup(void)
 {
-    remove_proc_entry("ram_201801268", NULL);
+    remove_proc_entry("modulo_ram", NULL);
     printk(KERN_INFO "Modulo RAM eliminado \n");
 }
 
