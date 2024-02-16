@@ -70,7 +70,7 @@ func StopProcess(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Enviar señal SIGSTOP al proceso con el PID proporcionado
+	// Enviar señal SIGSTOP al proceso con el PID proporcionado stop kill -SIGSTOP PID
 	cmd := exec.Command("kill", "-SIGSTOP", strconv.Itoa(pid))
 	err = cmd.Run()
 	if err != nil {
@@ -94,7 +94,7 @@ func ResumeProcess(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Enviar señal SIGCONT al proceso con el PID proporcionado
+	// Enviar señal SIGCONT al proceso con el PID proporcionado kill -SIGCONT PID
 	cmd := exec.Command("kill", "-SIGCONT", strconv.Itoa(pid))
 	err = cmd.Run()
 	if err != nil {
