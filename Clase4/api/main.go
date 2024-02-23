@@ -118,7 +118,7 @@ func KillProcess(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Enviar señal SIGCONT al proceso con el PID proporcionado
+	// Enviar señal SIGCONT al proceso con el PID proporcionado KILL -9 PID o KILL SIGTERM PID
 	cmd := exec.Command("kill", "-9", strconv.Itoa(pid))
 	err = cmd.Run()
 	if err != nil {

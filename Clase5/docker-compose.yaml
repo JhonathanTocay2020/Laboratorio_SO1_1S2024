@@ -1,0 +1,11 @@
+version: '3'
+services:
+  backend:
+    build: ./backend 
+    image: "jhonathantocay/clase5_1s2024"
+    container_name: 'Backend_NODEJS'
+    ports:
+      - "2024:2024"
+
+#subir imagen
+# docker push jhonathantocay/clase5_1s2024

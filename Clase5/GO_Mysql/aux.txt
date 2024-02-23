@@ -1,0 +1,39 @@
+//----------------- Configuracion Mysql ------------
+version: '3'
+services:
+  base:
+    image: "mysql"
+    container_name: 'MYSQL_Base'
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+    volumes:
+      - base_mysql:/var/lib/mysql      
+    ports:
+      - "3306:3306"
+volumes:
+  base_mysql: 
+//---------------- Completo ---------------------
+version: '3'
+services:
+  base:
+    image: "mysql"
+    container_name: 'MYSQL_Base'
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+    volumes:
+      - base_mysql:/var/lib/mysql      
+    ports:
+      - "3306:3306"
+  backend:
+    image: "app_go"
+    container_name: 'Backend_Go'
+    environment:
+      DB_USER: root
+      DB_PASSWORD: secret
+      DB_HOST: MYSQL_Base
+      DB_PORT: 3306
+      DB_NAME: clase3
+    ports:
+      - "8000:8000"
+volumes:
+  base_mysql: 
