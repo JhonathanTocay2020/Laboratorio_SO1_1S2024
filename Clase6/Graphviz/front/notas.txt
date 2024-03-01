@@ -1,0 +1,15 @@
+digraph G {
+  1 [label="systemd\nPID=1"];
+  8415 [label="logind\nPID=8415"];
+  2808 [label="python\nPID=2808"];
+  3028 [label="python\nPID=3028"];
+  8416 [label="bash\nPID=8416"];
+  9298 [label="ps\nPID=8416"];
+  9204 [label="vm\nPID=9204"];
+  1 -> 8415;
+  1 -> 2808;
+  1 -> 3028;
+  8415 -> 8416;
+  8416 -> 9298;
+  8416 -> 9204;
+}

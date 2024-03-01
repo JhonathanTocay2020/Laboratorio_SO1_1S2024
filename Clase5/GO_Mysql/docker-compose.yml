@@ -9,5 +9,16 @@ services:
       - base_mysql:/var/lib/mysql      
     ports:
       - "3306:3306"
+  backend:
+    image: "jhonathantocay/apiclase5"
+    container_name: 'Backend_Go'
+    environment:
+      DB_USER: root
+      DB_PASSWORD: secret
+      DB_HOST: MYSQL_Base
+      DB_PORT: 3306
+      DB_NAME: clase3
+    ports:
+      - "8000:8000"
 volumes:
   base_mysql: 

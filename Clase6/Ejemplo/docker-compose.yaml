@@ -1,0 +1,15 @@
+version: '3'
+services:
+  backend:
+    image: "jhonathantocay/clase6_backend"
+    container_name: 'Backend'
+    environment:
+      DB_USER: root
+      DB_PASSWORD: so1-mysql123
+      DB_HOST: 34.86.185.30
+      DB_PORT: 3306
+      DB_NAME: clase6
+    ports:
+      - "2024:2024"
+volumes:
+  base_mysql: 

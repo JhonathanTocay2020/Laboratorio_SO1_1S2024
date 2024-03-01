@@ -14,6 +14,6 @@ EXPOSE 8000
 # Ejecuta la aplicación al iniciar el contenedor
 CMD ["./myapp"]
 
-#docker build -t jhonathantocay/apiclase7 .
-#docker build -t jhonathantocay/apiclase7 .
-#docker build -t jhonathantocay/apiclase7 .
+#docker build -t jhonathantocay/apiclase5 .
+#docker push jhonathantocay/apiclase5 .
+#docker build -t jhonathantocay/apiclase5 .
