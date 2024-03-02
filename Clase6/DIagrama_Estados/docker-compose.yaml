@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  api_modulos:
+    image: api_p1
+    container_name: API_Signal
+    privileged: true
+    pid: host
+    restart: always
+    volumes:
+      - type: bind
+        source: /proc
+        target: /proc
+    ports:
+      - '8080:8080'

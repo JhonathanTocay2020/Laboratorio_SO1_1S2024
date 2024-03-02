@@ -1,0 +1,10 @@
+FROM golang:alpine
+WORKDIR /app
+COPY . .
+RUN go build -o myapp
+
+EXPOSE 8080
+CMD ["./myapp"]
+
+#docker build -t api_p1 .
+#docker run -p 8080:8080 api_p1

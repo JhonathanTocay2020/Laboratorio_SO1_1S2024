@@ -20,5 +20,6 @@ EXPOSE 3000
 CMD ["npm", "start"]
 
 #Notas:
-#docker build -t jhonathantocay/clase6_front .
-#docker run -p 3000:3000 jhonathantocay/clase6_front
+#docker build -t jhonathantocay/fclase6 .
+#docker run -p 3000:3000 jhonathantocay/fclase6
+#docker push jhonathantocay/fclase6

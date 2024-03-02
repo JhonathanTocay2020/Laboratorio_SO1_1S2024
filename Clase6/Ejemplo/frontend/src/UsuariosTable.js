@@ -16,7 +16,7 @@ const UsuariosTable = () => {
   };
 
   const handleSubmit = () => {
-    fetch('http://34.85.236.58:2024/Registrar', {
+    fetch('http://34.48.21.96:2024/Registrar', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -32,7 +32,7 @@ const UsuariosTable = () => {
   };
 
   useEffect(() => {
-    fetch('http://34.85.236.58:2024/Estudiantes')
+    fetch('http://34.48.21.96:2024/Estudiantes')
       .then(response => response.json())
       .then(data => setAlumnos(data))
       .catch(error => console.error('Error fetching data:', error));

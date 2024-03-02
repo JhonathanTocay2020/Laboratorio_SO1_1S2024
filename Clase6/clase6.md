@@ -27,37 +27,25 @@ sudo apt-get install -y stress
 sudo stress --cpu 2 --timeout 60s
 ```
 
-# Cloud Run
+# Instalacion de Docker - bash
 
-## Container Registry
+```sh
+#!/bin/bash
 
-### Paso 1.
-Hacer pull de la imagen desde DockerHub
+# Instalación de Docker
+sudo apt-get update
+sudo apt-get install -y ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-docker pull <<username>>/<<image_name>>
-
-Ej:
-
-sudo docker pull jhonathantocay/claseN_so1
-
-
-### Paso 2.
-Agregarle tag a la imagen.
-
-docker tag <<imagen>> gcr.io/<ID_Proyecto>/<nombre>:<version>
-
-Ej:
-
-docker tag jhonathantocay/claseN_so1 gcr.io/so1-1s24/claseN:V1
-
-
-### Paso 3.
-Hacer push de la imagen tageada
-
-docker push <<imagen>>
-
-Ej:
-
-docker push gcr.io/so1-1s24/front-claseN:V1
-
-**Nota:** habilitar el servicio de **"Google Container Registry API"**
+# Instalación de Nginx y ejecución en un contenedor Docker
+sudo apt-get install -y nginx
+sudo docker pull nginx
+sudo docker run -d --name mynginx -p 2020:80 nginx
+```
