@@ -1,0 +1,22 @@
+apiVersion: apps/v1             # Version de K8S
+kind: Deployment                # Tipo de Object 
+metadata:                       # Información adicional
+  name: node-app        # Nombre con el que se identificara en el despligue
+  namespace: so1-clase8         # Namespace donde se creara
+  labels:                              
+    app: node-app               # Etiqueta para el despliegue
+spec:                           # Especificaciones para el Despliegue
+  replicas: 1                   # Número de replicas que tendrá este pod
+  selector:                     # Es la forma primitiva de hacer referencia, es como un id interno
+    matchLabels:                 
+      app: node-app             # Etiqueta para que otros objetos de kubernetes lo encuentren
+  template:                     # Es la configuración final del pod 
+    metadata:                   # Tiene su propia metadata para la plantilla o pod
+      labels:                    
+        app: node-app           # Etiqueta del contenedor
+    spec:                       # Tiene sus especificaciones
+      containers:               # Información del contenedors o mas si el pod tiene muchos
+      - name: node-app          # Nombre del contenedor
+        image: nginx     # url de imagen alojada en docker hub
+        ports:                  
+        - containerPort: 80   # puerto 80 

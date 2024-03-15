@@ -1,5 +1,14 @@
 version: '3'
 services:
+  base:
+    image: "mysql"
+    container_name: 'MYSQL_Base'
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+    volumes:
+      - base_mysql:/var/lib/mysql      
+    ports:
+      - "3306:3306"
   backend:
     image: "jhonathantocay/bclase6"
     container_name: 'Backend'
@@ -11,5 +20,10 @@ services:
       DB_NAME: clase5
     ports:
       - "2024:2024"
+  front:
+    image: 'frontend_imagen'
+    container_name: 'frontend-React'
+    ports:
+      - '3000:3000'
 volumes:
   base_mysql: 

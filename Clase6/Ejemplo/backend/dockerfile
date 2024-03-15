@@ -8,5 +8,5 @@ EXPOSE 2024
 
 CMD ["node", "index.js"]
 
-# docker build -t jhonathantocay/bclase6 .
-# docker push jhonathantocay/bclase6
+# docker build -t jhonathantocay/bp1 .
+# docker push jhonathantocay/bp1
