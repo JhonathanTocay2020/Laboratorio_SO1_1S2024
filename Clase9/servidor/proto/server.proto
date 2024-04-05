@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package = "./;confproto";
+
+package confproto;
+
+service getInfo {
+  rpc returnInfo (requestId) returns (replyInfo) {}
+}
+
+message requestId {
+  string sede = 1;
+  string municipio = 2;
+  string departamento = 3;
+  string partido = 4;
+}
+
+message replyInfo {
+  string info = 1;
+}
+
+// go get -u google.golang.org/protobuf/cmd/protoc-gen-go
+// go list -f '{{.Target}}' google.golang.org/protobuf/cmd/protoc-gen-go
+// export PATH=$PATH:$(go env GOPATH)/bin
+// protoc --go_out=. --go-grpc_out=. server.proto

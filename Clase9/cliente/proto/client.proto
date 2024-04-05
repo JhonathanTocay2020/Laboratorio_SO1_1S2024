@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "./;confproto";
+
+package confproto;
+
+service getInfo {
+  rpc returnInfo (requestId) returns (replyInfo) {}
+}
+
+message requestId {
+  string sede = 1;
+  string municipio = 2;
+  string departamento = 3;
+  string partido = 4;
+}
+
+message replyInfo {
+  string info = 1;
+}
+
+// protoc --go_out=. --go-grpc_out=. client.proto
+// Solo esta disponible para versiones de Golang 1.19 o posterior.
