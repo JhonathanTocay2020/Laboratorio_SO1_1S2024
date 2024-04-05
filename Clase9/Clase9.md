@@ -1,6 +1,6 @@
 # Clase 9 - GRPC
 
-### GRPC
+## GRPC
 
 Descargar Librerias para GRPC y agregarlas al GOPATH
 
@@ -15,8 +15,24 @@ Generar Archivos compilados
 ```sh
 protoc --go_out=. --go-grpc_out=. nombre_archivo.proto
 ```
+## Locust
 
-### Descargar Mysql
+```sh
+pip install locust
+```
+
+#### Levantar Locust
+
+```sh
+locust -f tu_script.py 
+```
+
+#### Ruta donde se levanta por defecto Locust
+
+```sh
+http://0.0.0.0:8089
+```
+## Descargar Mysql
 
 ```sh
 docker pull mysql
