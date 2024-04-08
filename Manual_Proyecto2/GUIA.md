@@ -42,7 +42,7 @@ Debemos de Analizar que puedo realizar localmente y como dividir el proyecto. Co
 
 ### WASM
 
-![Texto alternativo](./img/Ruta2.png)
+![Texto alternativo](./img/ruta2.png)
 
 ### ¿Puedo Realizar Pruebas Locales?
 
