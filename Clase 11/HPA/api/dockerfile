@@ -1,0 +1,15 @@
+# Define la imagen base de Node.js 18.16.0 en su versión "alpine"
+FROM node:18.16.0-alpine
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install
+
+# Copia todo el código fuente de la aplicación al directorio de trabajo del contenedor
+COPY . .
+EXPOSE 2024
+
+CMD ["node", "index.js"]
+
+# docker build -t jhonathantocay/clase11_v1 .
+# docker push jhonathantocay/clase11_v1
+# docker run -p 2024:2024 jhonathantocay/clase11_v1

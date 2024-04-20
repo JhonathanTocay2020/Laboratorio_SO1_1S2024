@@ -1,0 +1,12 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hpa-d-clase11
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: d-clase11
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 1
