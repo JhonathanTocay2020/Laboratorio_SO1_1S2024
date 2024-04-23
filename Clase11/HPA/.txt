@@ -1,0 +1,9 @@
+ahora quiero dockerizarlo la estructura de mi proyecto estructura
+
+app-servidor
+- src
+- target
+cargo.lock
+cargo.toml
+dockerfile
+

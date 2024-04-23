@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rust-ruta
+  namespace: so1-p2
+spec:
+  selector:
+    matchLabels:
+      role: rust-ruta
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        role: rust-ruta
+
+    spec:
+      containers:
+      - name: rust-cliente
+        image: jhonathantocay/app_cliente 
+        ports:
+        - containerPort: 8000
+      - name: rust-server
+        image: jhonathantocay/app_server
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-rust
+spec:
+  type: LoadBalancer
+  ports:
+  - name: rust-client-port
+    port: 8000
+    targetPort: 8000
+  - name: rust-server-port
+    port: 8080
+    targetPort: 8080
+  selector:
+    role: rust-ruta

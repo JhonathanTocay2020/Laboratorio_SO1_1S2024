@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  rocket_cliente:
+    image: app_cliente
+    container_name: 'app_cliente'
+    ports:
+      - "8000:8000"
+
+  rocket_servidor:
+    image: app_server
+    container_name: 'app_server'
+    ports:
+      - "8080:8080"

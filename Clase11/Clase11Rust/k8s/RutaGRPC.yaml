@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grpc-ruta
+  namespace: so1-p2
+spec:
+  selector:
+    matchLabels:
+      role: grpc-ruta
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        role: grpc-ruta
+
+    spec:
+      containers:
+      - name: grpc-cliente
+        image: jhonathantocay/cliente_grpc
+        ports:
+        - containerPort: 3000
+      - name: grpc-server
+        image: jhonathantocay/server_grpc
+        ports:
+        - containerPort: 3001
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-grpc
+spec:
+  type: LoadBalancer
+  ports:
+  - name: grpc-client-port
+    port: 3000
+    targetPort: 3000
+  - name: grpc-server-port
+    port: 3001
+    targetPort: 3001
+  selector:
+    role: grpc-ruta

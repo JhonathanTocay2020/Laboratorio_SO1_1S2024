@@ -7,6 +7,7 @@ edition = "2021"
 
 [dependencies]
 rocket = { version = "0.5.0-rc.1", features = ["secrets", "tls", "json"] }
+rocket_cors = "0.6.0"
 serde = { version = "1.0", features = ["derive"] }
 tokio = { version = "1", features = ["full"] }
 reqwest = { version = "0.12.3", features = ["json"] }

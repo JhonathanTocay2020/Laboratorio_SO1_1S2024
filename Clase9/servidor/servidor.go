@@ -57,7 +57,7 @@ func (s *server) ReturnInfo(ctx context.Context, in *pb.RequestId) (*pb.ReplyInf
 		Partido:      in.GetPartido(),
 	}
 	fmt.Println(data)
-	insertMySQL(data)
+	//insertMySQL(data)
 	return &pb.ReplyInfo{Info: "Hola cliente, recibí el comentario"}, nil
 }
 
@@ -78,7 +78,7 @@ func main() {
 	s := grpc.NewServer()
 	pb.RegisterGetInfoServer(s, &server{})
 
-	mysqlConnect()
+	//mysqlConnect()
 
 	if err := s.Serve(listen); err != nil {
 		log.Fatalln(err)

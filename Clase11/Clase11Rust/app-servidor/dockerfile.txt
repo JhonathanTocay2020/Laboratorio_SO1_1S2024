@@ -1,0 +1,23 @@
+# Etapa de construcción del servidor
+FROM rust:1.77.0 as client-build-env
+WORKDIR /app/client
+ADD . /app/client
+RUN cargo build --release
+# Etapa final para el contenedor
+FROM rust:1.77.0
+# Copia el servidor compilado
+COPY --from=client-build-env /app/client/target/release /client
+# Exponer el puerto 8000
+EXPOSE 8080
+# CMD para ejecutar tanto el cliente como el servidor
+CMD ["/client/client"]
+
+# docker build -t app_server .
+# docker run -p 8080:8080 app_server
+# docker run --rm app_server
+
+#rocket_cliente:
+#    image: nombre_de_la_imagen_del_backend
+#    ports:
+#      - "8000:8000"
+#    restart: always

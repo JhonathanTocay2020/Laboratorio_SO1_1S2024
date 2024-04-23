@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  grpc_cliente:
+    image: jhonathantocay/cliente_grpc
+    container_name: 'grpc-cliente'
+    ports:
+      - "3000:3000"
+
+  grpc_servidor:
+    image: jhonathantocay/server_grpc
+    container_name: 'grpc-server'
+    ports:
+      - "3001:3001"

@@ -35,7 +35,7 @@ class trafficData(HttpUser):
     def sendMessage(self):
         data = self.reader.getData() #Registro obtenido de la lista
         if data is not None:
-            res = self.client.post("/insert", json=data)
+            res = self.client.post("/grpc/insert", json=data)
             response = res.json()
             print(response)
         else:
